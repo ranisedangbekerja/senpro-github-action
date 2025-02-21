@@ -42,14 +42,14 @@ deploy:
             port: ${{ secrets.PORT }}
             script: |
               eval "$(ssh-agent-s)"
-              ssh-add ~/.ssh/ssh-praktikan60
+              ssh-add ~/.ssh/ssh-praktikan60;
               echo "Cek folder project";
-              [ ! -d "${HOME}/senpro/494013/modul02/senpro-github-action/" ] &&
+              [ ! -d "${HOME}/senpro/493982/modul02/senpro-github-action/" ] &&
                 {
                   echo "Repository belum di-clone. Cloning...";
-                  mkdir -p ~/senpro/494013/modul02;
-                  cd ~/senpro/494013/modul02;
-                  git clone https://github.com/marchel-24/senpro-github-action.git;
+                  mkdir -p ~/senpro/493982/modul02;
+                  cd ~/senpro/493982/modul02;
+                  git clone git@github.com:ranisedangbekerja/xplorium.git;
                   cd ~/senpro/494013/modul02/senpro-github-action;
                   echo "Install Package dan Build Project";
                   npm install;
@@ -57,7 +57,7 @@ deploy:
                 } ||
                 {
                   echo "Repository sudah ada. Building...";
-                  cd ~/senpro/494013/modul02/senpro-github-action;
+                  cd ~/senpro/493982/modul02/senpro-github-action;
                   git restore;
                   git pull origin main;
                   echo "Install Package dan Build Project";
