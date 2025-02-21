@@ -64,4 +64,3 @@ deploy:
                   npm install;
                   npm run build;
                 }
-has context menu
